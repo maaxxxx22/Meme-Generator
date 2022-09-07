@@ -16,37 +16,61 @@ Here are some examples of the command in action.
 Here is another example with the path of the image file included :
 
 ![mem7](https://user-images.githubusercontent.com/111069500/188813424-585c3d3d-0793-4e1f-8d2b-c916c2511fb8.PNG)
+
+To get more information, just run `python meme.py --help`.
     
 ### Flask Web App
 To run it with the app just use the command `python3 app.py` and go to the link.
 Here are some examples of the app at work:
 
+![mem8](https://user-images.githubusercontent.com/111069500/188956984-84b0cf4e-2884-4a15-bcb8-32a7f94139f4.PNG)
+
+The output generates a link with a fully functional web interface from which you can generate random memes from your local file or even create one yourself.
 
 
-# Roles & Responsibilities of submodules
-The `QuoteEngine` submodule handels the ingestion and creation of quote objects.
-The Ingestor class takes a file path and automatically chooses the fitting Ingestor
-subclass to read the quotes and return a list of quote objects.
 
-The `MemeEngine` loads the image, resizes if necessary, adds the quote and
-saves the meme under the specified path.
+# Module Roles and Responsibilities
+The three main modules are the `QuoteEngine`, the `MemeEngine`, and the `Ingestors`.
 
-# Examples
-### CLI
-`python meme.py` Creates a random meme.  
-`python meme.py --body "To shit or not to shit." --author "Gnarles Barkley"`
-Puts this quote on a random picture.  
-`python meme.py --path "example_image.jpg" --body "To shit or not to shit." --author "Gnarles Barkley"`
-Like the example above with a supplied image.
-nd 
-###
-Start the flask web app by `python app.py`.
-The console will tell you the server it is running on.
-Head to the browser and enter the server it is running on.
-Hit `random` to create a random meme.
-Hit `custom` to create one
+### QuoteEngine Module
+The `QuoteEngine` module is responsible for loading and parsing quotes from files. So basically its job is to recognize and ingest the different file types that contain the quotes. 
+
+### MemeEngine
+The `MemeEngine` Module is responsible for manipulating and drawing text onto images. The class implements code to load the image using pillow (PIL), resize the image, Add a quote body and a quote author to the image, and ultimately returns the path to the manipulated image. 
+  
+### Ingestors
+The `Ingestors` module is a compilation of all the ingestor classes from which separate strategy objects are implemented in order to realize the (IngestorInterface) for each file type (csv, docx, pdf, txt). This module lives in the All_ingestors file directory.
+
+
+
+
+
+
 # Dependencies
 Install all needed dependencies via pip. (see below)
 
-    pip install -r requirements1.txt
+    pip install -r requirements.txt
+    
+## List of packages in requirements.txt
+
+certifi==2021.5.30
+charset-normalizer==2.0.4
+click==8.0.1
+Flask==2.0.1
+idna==3.2
+itsdangerous==2.0.1
+Jinja2==3.0.1
+lxml==4.6.3
+MarkupSafe==2.0.1
+numpy==1.19.5
+pandas==1.1.5
+pdfplumber==0.6.0
+Pillow==8.3.1
+python-dateutil==2.8.2
+python-docx==0.8.11
+pytz==2021.1
+requests==2.26.0
+six==1.16.0
+urllib3==1.26.6
+Werkzeug==2.0.1
 
