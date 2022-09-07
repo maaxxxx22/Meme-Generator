@@ -12,19 +12,28 @@ The full command setup looks like this :
     
 Here are some examples of the command in action.  
 
-![mem4](https://user-images.githubusercontent.com/111069500/188812939-8742dc12-0b51-4494-a172-0defa434f762.PNG)
-
+    rootP5d4c2adc7c0:/home/workspace# python3 meme.py --body "Nice dog" --author "Okunta" 
+    ./tmp/temp-1.jpg
 Here is another example with the path of the image file included :
 
-![mem7](https://user-images.githubusercontent.com/111069500/188813424-585c3d3d-0793-4e1f-8d2b-c916c2511fb8.PNG)
-
+    rootg25d4c2adc7c0:/home/workspace# python3 meme.py --path "./_data/Test Photos /owl image 1.jpeg" --body '"Are you looking at me looking at you ?"' --author "Okunta" 
+    ./tmp/temp-1.jpg 
 To get more information, just run `python meme.py --help`.
     
 ### Flask Web App
 To run it with the app just use the command `python3 app.py` and go to the link.
 Here are some examples of the app at work:
 
-![mem8](https://user-images.githubusercontent.com/111069500/188956984-84b0cf4e-2884-4a15-bcb8-32a7f94139f4.PNG)
+    root@ae773ac314a2:/home/workspace# export FLASK_APP=app.py 
+    root@ae773ac314a2:/home/workspace# flask run --host 0.0.0.0 --port 3000 --reload 
+    * Serving Flask app 'app.py' (lazy loading) 
+    * Environment: production 
+    WARNING: Tnis is a a development server. Do not use it in a production deployment. 
+    Use a production WSGI server instead. 
+    * Debug mode: off 
+    * Running on all addresses. 
+    WARNING: This is a development server. Do not use it in a production deployment. 
+    * Running on http://172.18.0.2:3000/ (Press CTRL+C to quit) 
 
 The output generates a link with a fully functional web interface from which you can generate random memes from your local file or even create one yourself.
 
