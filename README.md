@@ -1,9 +1,10 @@
 # Project Overview
-The goal of this project is to construct a Meme generator. This will be a flask web application that will be responsible for dynamically generating an image with an overlaid quote, otherwise known as a meme. The skills and tools used in this project are the same skills used by **Data Engineers** and **Full stack Developers**.
+The goal of this project is to construct a Meme generator. This will be a flask web application that will be responsible for dynamically generating an image with an overlaid quote, otherwise known as a meme. The Skills and tools demonstrated in this project are the same skills used by **Data Engineers** and **Full stack Developers**.
+
 
 # How to setup 
-The program can be run through the flask web app or the comand line interface.
-### Command line interface
+The program can be run through the **flask web app** or the **comand line interface**. All dependencies must be installed before we run the program. Install the dependencies by using this command `pip install -r requirements.txt`.
+### Command line interface (CLI)
 In the command line the module can be run using this command `python3 meme.py`.
 The full command setup looks like this :
     
@@ -28,22 +29,17 @@ Here are some examples of the app at work:
 The output generates a link with a fully functional web interface from which you can generate random memes from your local file or even create one yourself.
 
 
-
 # Module Roles and Responsibilities
 The three main modules are the `QuoteEngine`, the `MemeEngine`, and the `Ingestors`.
 
 ### QuoteEngine Module
 The `QuoteEngine` module is responsible for loading and parsing quotes from files. So basically its job is to recognize and ingest the different file types that contain the quotes. 
 
-### MemeEngine
+### MemeEngine Module
 The `MemeEngine` Module is responsible for manipulating and drawing text onto images. The class implements code to load the image using pillow (PIL), resize the image, Add a quote body and a quote author to the image, and ultimately returns the path to the manipulated image. 
   
-### Ingestors
+### Ingestors Module
 The `Ingestors` module is a compilation of all the ingestor classes from which separate strategy objects are implemented in order to realize the (IngestorInterface) for each file type (csv, docx, pdf, txt). This module lives in the All_ingestors file directory.
-
-
-
-
 
 
 # Dependencies
@@ -51,26 +47,27 @@ Install all needed dependencies via pip. (see below)
 
     pip install -r requirements.txt
     
-## List of packages in requirements.txt
 
-certifi==2021.5.30
-charset-normalizer==2.0.4
-click==8.0.1
-Flask==2.0.1
-idna==3.2
-itsdangerous==2.0.1
-Jinja2==3.0.1
-lxml==4.6.3
-MarkupSafe==2.0.1
-numpy==1.19.5
-pandas==1.1.5
-pdfplumber==0.6.0
-Pillow==8.3.1
-python-dateutil==2.8.2
-python-docx==0.8.11
-pytz==2021.1
-requests==2.26.0
-six==1.16.0
-urllib3==1.26.6
-Werkzeug==2.0.1
+**List of packages in requirements.txt**
+
+certifi==2021.5.30    
+charset-normalizer==2.0.4     
+click==8.0.1     
+Flask==2.0.1    
+idna==3.2     
+itsdangerous==2.0.1     
+Jinja2==3.0.1       
+lxml==4.6.3     
+MarkupSafe==2.0.1       
+numpy==1.19.5      
+pandas==1.1.5     
+pdfplumber==0.6.0     
+Pillow==8.3.1      
+python-dateutil==2.8.2      
+python-docx==0.8.11     
+pytz==2021.1     
+requests==2.26.0      
+six==1.16.0      
+urllib3==1.26.6        
+Werkzeug==2.0.1      
 
