@@ -4,6 +4,7 @@ import pathlib
 import argparse
 from MemeEngine import MemeEngine
 from All_Ingestors.Ingestors import Ingestor
+from QuoteEngine.QuoteEngine import QuoteModel
 
 
 def generate_meme(path=None, body=None, author=None):
@@ -19,7 +20,7 @@ def generate_meme(path=None, body=None, author=None):
 
         img = random.choice(imgs)
     else:
-        img = path[0]
+        img = path
 
     if body is None:
         quote_files = ['./_data/DogQuotes/DogQuotesTXT.txt',
