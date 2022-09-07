@@ -38,7 +38,7 @@ class MemeEngine:
             """The text color and outline added to a dictionary of attributes to be used later"""
             fill = (255, 255, 255)
             stroke_color = (0, 0, 0)
-            attributes = {'fill': (255, 255, 255), 'font': fnt1, 'stroke_width': 1, 'stroke_fill': (0, 0, 0)}
+            attributes = {'fill': (255, 255, 255), 'font': fnt1, 'stroke_width': 3, 'stroke_fill': (0, 0, 0)}
 
             """The text drawn on the image."""
             d = ImageDraw.Draw(img)
@@ -47,7 +47,7 @@ class MemeEngine:
             for element in word_list:
                     d.text((x_pos, y_pos), element, **attributes)
                     y_pos += 35
-            d.text((x_pos,  y_pos + 25), f"- {author}", fill, fnt2, stroke_width=1, stroke_fill=stroke_color)
+            d.text((x_pos,  y_pos + 25), f"- {author}", fill, fnt2, stroke_width=3, stroke_fill=stroke_color)
     
             """The resulting image file path is returned."""
             outfile = os.path.join(self.file_dir, f"temp-{self.count}.jpg")
